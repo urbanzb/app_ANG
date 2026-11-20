@@ -253,6 +253,99 @@
      "pic": "🪑"
     }
    ]
+  },
+  {
+   "id": "colours",
+   "name": "Colours",
+   "sl": "Barve",
+   "icon": "🎨",
+   "color": "#FFC93C",
+   "words": [
+    {
+     "en": "white",
+     "sl": "bela",
+     "pic": "⚪",
+     "added": "2026-11-20"
+    },
+    {
+     "en": "black",
+     "sl": "črna",
+     "pic": "⚫",
+     "added": "2026-11-20"
+    },
+    {
+     "en": "yellow",
+     "sl": "rumena",
+     "pic": "🟡",
+     "added": "2026-11-20"
+    },
+    {
+     "en": "orange",
+     "sl": "oranžna",
+     "pic": "🟠",
+     "added": "2026-11-20"
+    },
+    {
+     "en": "red",
+     "sl": "rdeča",
+     "pic": "🔴",
+     "added": "2026-11-20"
+    },
+    {
+     "en": "pink",
+     "sl": "roza",
+     "pic": "🌸",
+     "added": "2026-11-20"
+    },
+    {
+     "en": "purple",
+     "sl": "vijolična",
+     "pic": "🟣",
+     "added": "2026-11-20"
+    },
+    {
+     "en": "blue",
+     "sl": "modra",
+     "pic": "🔵",
+     "added": "2026-11-20"
+    },
+    {
+     "en": "green",
+     "sl": "zelena",
+     "pic": "🟢",
+     "added": "2026-11-20"
+    },
+    {
+     "en": "brown",
+     "sl": "rjava",
+     "pic": "🟤",
+     "added": "2026-11-20"
+    },
+    {
+     "en": "I like …",
+     "sl": "Imam rad …",
+     "pic": "👍",
+     "added": "2026-11-20"
+    },
+    {
+     "en": "I don’t like …",
+     "sl": "Ne maram …",
+     "pic": "👎",
+     "added": "2026-11-20"
+    },
+    {
+     "en": "What’s your favourite colour?",
+     "sl": "Katera je tvoja najljubša barva?",
+     "pic": "🤔",
+     "added": "2026-11-20"
+    },
+    {
+     "en": "My favourite colour is …",
+     "sl": "Moja najljubša barva je …",
+     "pic": "🌈",
+     "added": "2026-11-20"
+    }
+   ]
   }
  ],
  "firebase": {
