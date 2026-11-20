@@ -1,0 +1,258 @@
+{
+ "version": 1,
+ "updated": "2026-11-17",
+ "topics": [
+  {
+   "id": "feelings",
+   "name": "Feelings",
+   "sl": "Čustva",
+   "icon": "😊",
+   "color": "#FFC93C",
+   "words": [
+    {
+     "en": "happy",
+     "sl": "vesel",
+     "pic": "😄"
+    },
+    {
+     "en": "sad",
+     "sl": "žalosten",
+     "pic": "😢"
+    },
+    {
+     "en": "angry",
+     "sl": "jezen",
+     "pic": "😠"
+    },
+    {
+     "en": "scared",
+     "sl": "prestrašen",
+     "pic": "😱"
+    },
+    {
+     "en": "hungry",
+     "sl": "lačen",
+     "pic": "🍽️"
+    },
+    {
+     "en": "thirsty",
+     "sl": "žejen",
+     "pic": "🥤"
+    },
+    {
+     "en": "tired",
+     "sl": "utrujen",
+     "pic": "😴"
+    },
+    {
+     "en": "How are you?",
+     "sl": "Kako si?",
+     "pic": "💬"
+    },
+    {
+     "en": "I’m happy.",
+     "sl": "Jaz sem vesel. / Vesel sem.",
+     "pic": "🙋"
+    },
+    {
+     "en": "good",
+     "sl": "dobro",
+     "pic": "👍"
+    },
+    {
+     "en": "great",
+     "sl": "super",
+     "pic": "🌟"
+    },
+    {
+     "en": "wonderful",
+     "sl": "čudovito",
+     "pic": "🤩"
+    },
+    {
+     "en": "not so good",
+     "sl": "ne preveč dobro",
+     "pic": "😕"
+    }
+   ]
+  },
+  {
+   "id": "transport",
+   "name": "Transportation",
+   "sl": "Prevozna sredstva",
+   "icon": "🚗",
+   "color": "#6FB7FF",
+   "words": [
+    {
+     "en": "a car",
+     "sl": "avto",
+     "pic": "🚗"
+    },
+    {
+     "en": "a bike",
+     "sl": "kolo",
+     "pic": "🚲"
+    },
+    {
+     "en": "a motorbike",
+     "sl": "motor",
+     "pic": "🏍️"
+    },
+    {
+     "en": "a ship",
+     "sl": "ladja",
+     "pic": "🚢"
+    },
+    {
+     "en": "a boat",
+     "sl": "čoln",
+     "pic": "🚤"
+    },
+    {
+     "en": "a balloon",
+     "sl": "balon",
+     "pic": "🎈"
+    },
+    {
+     "en": "a helicopter",
+     "sl": "helikopter",
+     "pic": "🚁"
+    },
+    {
+     "en": "a plane",
+     "sl": "letalo",
+     "pic": "✈️"
+    },
+    {
+     "en": "a train",
+     "sl": "vlak",
+     "pic": "🚆"
+    },
+    {
+     "en": "a bus",
+     "sl": "avtobus",
+     "pic": "🚌"
+    },
+    {
+     "en": "a van",
+     "sl": "kombi",
+     "pic": "🚐"
+    },
+    {
+     "en": "a lorry",
+     "sl": "tovornjak",
+     "pic": "🚚"
+    },
+    {
+     "en": "a rocket",
+     "sl": "raketa",
+     "pic": "🚀"
+    },
+    {
+     "en": "Drive slowly.",
+     "sl": "Vozi počasi.",
+     "pic": "🐢"
+    },
+    {
+     "en": "Drive fast.",
+     "sl": "Vozi hitro.",
+     "pic": "🏎️"
+    },
+    {
+     "en": "red light",
+     "sl": "rdeča luč",
+     "pic": "🔴"
+    },
+    {
+     "en": "green light",
+     "sl": "zelena luč",
+     "pic": "🟢"
+    },
+    {
+     "en": "Turn right.",
+     "sl": "Obrni desno.",
+     "pic": "➡️"
+    },
+    {
+     "en": "Turn left.",
+     "sl": "Obrni levo.",
+     "pic": "⬅️"
+    },
+    {
+     "en": "Drive forward.",
+     "sl": "Vozi naprej.",
+     "pic": "⬆️"
+    },
+    {
+     "en": "Drive backwards.",
+     "sl": "Vozi nazaj.",
+     "pic": "⬇️"
+    }
+   ]
+  },
+  {
+   "id": "hello",
+   "name": "Hello",
+   "sl": "Pozdravi",
+   "icon": "👋",
+   "color": "#5FD39A",
+   "words": [
+    {
+     "en": "Hello",
+     "sl": "Živijo",
+     "pic": "👋"
+    },
+    {
+     "en": "Goodbye",
+     "sl": "Na svidenje",
+     "pic": "🚪"
+    },
+    {
+     "en": "What’s your name?",
+     "sl": "Kako ti je ime?",
+     "pic": "📛"
+    },
+    {
+     "en": "I’m …",
+     "sl": "Jaz sem …",
+     "pic": "🙋"
+    },
+    {
+     "en": "My name is …",
+     "sl": "Ime mi je …",
+     "pic": "🏷️"
+    },
+    {
+     "en": "Who’s this?",
+     "sl": "Kdo je to?",
+     "pic": "🤔"
+    },
+    {
+     "en": "This is …",
+     "sl": "To je …",
+     "pic": "👉"
+    },
+    {
+     "en": "I’m a boy.",
+     "sl": "Jaz sem fant.",
+     "pic": "👦"
+    },
+    {
+     "en": "I’m a girl.",
+     "sl": "Jaz sem punca.",
+     "pic": "👧"
+    },
+    {
+     "en": "Stand up",
+     "sl": "Vstani",
+     "pic": "🧍"
+    },
+    {
+     "en": "Sit down",
+     "sl": "Usedi se",
+     "pic": "🪑"
+    }
+   ]
+  }
+ ]
+}
