@@ -1,0 +1,71 @@
+name: Zgradi APK
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'android/**'
+      - '.github/workflows/apk.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Ključ za podpisovanje
+        env:
+          KS_PASS: ${{ secrets.APK_GESLO }}
+        run: |
+          if [ -z "$KS_PASS" ]; then
+            echo "::error::Manjka skrivnost APK_GESLO. Dodaj jo v Settings → Secrets and variables → Actions."
+            exit 1
+          fi
+          if [ ${#KS_PASS} -lt 6 ]; then
+            echo "::error::Geslo APK_GESLO mora imeti vsaj 6 znakov."
+            exit 1
+          fi
+          if [ -f android/keystore.enc ]; then
+            openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -in android/keystore.enc -out android/app/release.jks -pass env:KS_PASS
+          else
+            keytool -genkeypair -keystore android/app/release.jks -alias besede -keyalg RSA -keysize 2048 -validity 10000 \
+              -storepass "$KS_PASS" -keypass "$KS_PASS" -dname "CN=Angleske besede"
+            openssl enc -aes-256-cbc -pbkdf2 -iter 200000 -salt -in android/app/release.jks -out android/keystore.enc -pass env:KS_PASS
+            git config user.name "github-actions[bot]"
+            git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+            git add android/keystore.enc
+            git commit -m "Šifriran ključ za podpisovanje APK [skip ci]"
+            git push
+          fi
+
+      - name: Zgradi APK
+        working-directory: android
+        env:
+          KS_PASS: ${{ secrets.APK_GESLO }}
+          KS_FILE: release.jks
+        run: |
+          OWNER=$(echo "${{ github.repository_owner }}" | tr 'A-Z' 'a-z')
+          gradle assembleRelease --no-daemon \
+            -PversionCode=${{ github.run_number }} \
+            -PappUrl="https://$OWNER.github.io/${{ github.event.repository.name }}/"
+          cp app/build/outputs/apk/release/app-release.apk ../Besede.apk
+
+      - name: Objavi APK
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view apk >/dev/null 2>&1 || gh release create apk --title "Android aplikacija" \
+            --notes "Prenesi datoteko Besede.apk in jo odpri na Android telefonu."
+          gh release upload apk Besede.apk --clobber
