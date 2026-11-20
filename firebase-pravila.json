@@ -1,0 +1,11 @@
+{
+  "rules": {
+    "rooms": {
+      "$code": {
+        ".read": "auth != null",
+        ".write": "auth != null && $code.matches(/^[0-9]{4}$/)",
+        ".validate": "newData.hasChildren(['created', 'cards', 'state'])"
+      }
+    }
+  }
+}

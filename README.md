@@ -1,6 +1,6 @@
 # Angleške besede
 
-Igrive vaje za angleške besede iz šole: kartice, poveži, spomin, poslušaj, kaj manjka in najdi.
+Igrive vaje za angleške besede iz šole: kartice, poveži, spomin, poslušaj, kaj manjka, najdi, igra za dva in slovarček.
 Aplikacija deluje na Android telefonih in iPhonih, se namesti kot prava aplikacija z ikono in deluje tudi brez povezave.
 Ko skrbnik objavi nove besede, jih vsi uporabniki dobijo samodejno.
 
@@ -14,6 +14,7 @@ Ko skrbnik objavi nove besede, jih vsi uporabniki dobijo samodejno.
 | `sw.js` | Delovanje brez povezave in samodejne posodobitve |
 | `icon-*.png`, `apple-touch-icon.png` | Ikone |
 | `*.woff2`, `pisave-licenca-OFL.txt` | Pisave in njihova licenca |
+| `firebase-pravila.json` | Varnostna pravila za igro za dva |
 
 Vse datoteke so namenoma v eni mapi, da jih lažje naložiš tudi s telefona.
 
@@ -81,9 +82,49 @@ Starši lahko v **⚙️ → Moje besede** dodajo svoje besede, tudi s prileplja
 Te besede ostanejo samo na njihovi napravi in se mešajo z besedami iz šole.
 Ob menjavi telefona jih izvozijo (**⬇️ Izvozi**) in na novem telefonu uvozijo (**⬆️ Uvozi**).
 
+## 6. Igra za dva (Firebase, enkrat)
+
+Igra za dva poveže dva telefona prek Googlove storitve Firebase. Brezplačni paket zadošča za cel razred.
+
+**A. Ustvari projekt**
+1. Odpri **console.firebase.google.com** in se prijavi z Google računom.
+2. **Create a project** (Ustvari projekt), ime na primer `besede`. Google Analytics izklopi.
+
+**B. Vklopi anonimno prijavo**
+1. Levo **Build → Authentication → Get started**.
+2. Zavihek **Sign-in method → Anonymous → Enable → Save**.
+3. Zavihek **Settings → Authorized domains → Add domain** in vpiši `urbanzb.github.io`.
+
+**C. Ustvari bazo**
+1. Levo **Build → Realtime Database → Create database**.
+2. Lokacija: **Belgium (europe-west1)**. Način: **Start in locked mode**.
+3. Zavihek **Rules**: izbriši vse in prilepi vsebino datoteke `firebase-pravila.json`, nato **Publish**.
+4. Na zavihku **Data** je zgoraj naslov baze, na primer `https://besede-…-default-rtdb.europe-west1.firebasedatabase.app`. Kopiraj ga.
+
+**D. Pridobi nastavitve**
+1. Zobnik levo zgoraj → **Project settings** → spodaj **Your apps** → ikona **</>** (Web).
+2. Ime aplikacije `besede`, Firebase Hosting ne označi, tapni **Register app**.
+3. Kopiraj celoten blok `const firebaseConfig = { … }`.
+
+**E. Vpiši v aplikacijo**
+1. V aplikaciji odpri **Skrbniški način → 👫 Igra za dva (Firebase)**.
+2. Prilepi `firebaseConfig` in Database URL, tapni **Uporabi nastavitve** in **Preizkusi povezavo**.
+3. Ko piše »Povezava s Firebase deluje«, tapni **Objavi za vse**.
+
+Nastavitve Firebase niso skrivnost, saj so v vsaki spletni aplikaciji, ki uporablja Firebase, vidne. Bazo varujejo pravila iz koraka C.
+
+### Kako igrata otroka
+1. Prvi otrok izbere temo na začetnem zaslonu, odpre **Igra za dva**, izbere živalco in tapne **Ustvari igro**.
+2. Pokaže se štirimestna koda, ki jo pove prijatelju.
+3. Drugi otrok odpre **Igra za dva**, vpiše kodo in tapne **Pridruži se**.
+4. Izmenjujeta se pri odkrivanju kartic. Kdor najde par, je še enkrat na vrsti.
+
+Igra potrebuje internet na obeh telefonih. Če kateri izmed otrok zapre aplikacijo ali zaklene telefon, se igra lahko prekine.
+
 ## Zasebnost
 
-Aplikacija nima prijav, ne zbira podatkov in ne uporablja zunanjih storitev. Pisave so priložene, zato tudi Google Fonts ni v uporabi.
+Aplikacija nima prijav in ne zbira podatkov. Pisave so priložene, zato tudi Google Fonts ni v uporabi.
+Edina zunanja storitev je Firebase pri igri za dva: tam se med igro shranijo le kartice, živalci in točke, brez imen. Igra se izbriše, ko jo ustvarjalec zapusti.
 Zvezdice, nastavitve in lastne besede so shranjene samo na napravi.
 Datoteka `besede.json` je javna, zato vanjo ne vpisuj imen otrok ali drugih osebnih podatkov.
 
