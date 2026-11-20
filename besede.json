@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-17",
+ "updated": "2026-11-20",
  "topics": [
   {
    "id": "feelings",
@@ -254,5 +254,14 @@
     }
    ]
   }
- ]
+ ],
+ "firebase": {
+  "apiKey": "AIzaSyCzfX8I3ixtDCaXyOKSi9df8B1x9OuoKGY",
+  "authDomain": "appang-cd783.firebaseapp.com",
+  "databaseURL": "https://appang-cd783-default-rtdb.europe-west1.firebasedatabase.app",
+  "projectId": "appang-cd783",
+  "storageBucket": "appang-cd783.firebasestorage.app",
+  "messagingSenderId": "456006553032",
+  "appId": "1:456006553032:web:626f983db599b485af84fd"
+ }
 }
